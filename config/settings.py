@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'config',
     'rest_framework',
     'user',
+    'account',
     'employee',
 ]
 
