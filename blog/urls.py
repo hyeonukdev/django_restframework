@@ -1,6 +1,7 @@
 from django.urls import path, include
-from .views import BlogViewSet
+from .views import BlogView
 from .api import BlogApi, BlogCreateApi, BlogUpdateApi, BlogDeleteApi
+
 
 urlpatterns = [
     path('api',BlogApi.as_view()),
