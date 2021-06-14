@@ -8,4 +8,5 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('student/', include('student.urls')),
     path('blog/', include('blog.urls')),
+    path('jwt/', include('blog.urls')),
 ]
