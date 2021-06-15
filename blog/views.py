@@ -1,8 +1,16 @@
-from .models import Blog, Comment
-from .serializer import BlogSerializer, CommentSerializer
+from django.shortcuts import render
+from django.core import serializers
+from django.http import HttpResponse
+
 from rest_framework import viewsets
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.decorators import api_view, permission_classes, authentication_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
+
+from .models import Blog, Comment
+from .serializer import BlogSerializer, CommentSerializer
 from .permissions import IsOwnerOrReadOnly
 
 

@@ -16,8 +16,8 @@ class Blog(models.Model):
 
 class Comment(models.Model):
     id = models.AutoField(primary_key=True, null=False, blank=False)
-    blog = models.ForeignKey(Blog, null=False, blank=False, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, null=True, blank=False, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null=True, blank=False, on_delete=models.CASCADE)
     created_at = models.DateField(auto_now_add=True, null=False, blank=False)
     comment = models.TextField()
 
