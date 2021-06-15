@@ -34,13 +34,3 @@ class CommentView(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         serializer.save(user = self.request.user)
-
-
-@api_view(['GET'])
-@permission_classes((IsAuthenticated, ))
-@authentication_classes((JSONWebTokenAuthentication,))
-def posts(request):
-    posts = Blog.objects.filter(
-        published_at__isnull=False).order_by('-published_at')
-    post_list = serializers.serialize('json', posts)
-    return HttpResponse(post_list, content_type="text/json-comment-filtered")
